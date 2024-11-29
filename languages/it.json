@@ -1,0 +1,24 @@
+{
+  "tokenActionHud": {
+    "wod": {
+      "attribute": "Attributi",
+      "disciplines": "Discipline",
+      "skills": "Abilità",
+      "predefined": "Predefinite",
+      "armor": "Corazze",
+      "containers": "Contenitori",
+      "consumables": "Consumables",
+      "equipment": "Equipment",
+      "inventory": "Inventario",
+      "item": "Item",
+      "weapons": "Armi",
+      "treasure": "Treasure",
+      "settings": {
+        "displayUnequipped": {
+          "hint": "Choose whether to display unequipped items on the HUD",
+          "name": "Display Unequipped"
+        }
+      }
+    }
+  }
+}
