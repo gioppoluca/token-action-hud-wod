@@ -108,7 +108,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         #handleItemAction(event, actor, actionId) {
             const item = actor.items.get(actionId)
-            item.toChat(event)
+            this.toChat(item)
         }
 
         /**
@@ -195,25 +195,107 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             console.log(power)
             const dicepool = power[0].system.dicepool
             console.log(dicepool)
-            const paths = Object.values(dicepool).map((pool) => { return `${pool.path}.value` })
+            const paths = Object.values(dicepool).map((pool) => { return `${pool.path}` })
             console.log(paths)
+            let dataset = {
+                selectDialog: true,
+                attribute: "",
+                skill: "",
+                discipline: ""
+            }
+            paths.forEach(element => {
+                let [key, value] = element.split('.')
+                switch (key) {
+                    case "attributes":
+                        dataset["attribute"] = value
+                        break;
+                    case "disciplines":
+                        dataset["discipline"] = value
+                        break;
+                    case "skills":
+                        dataset["skill"] = value
+                        break;
+
+                    default:
+                        break;
+                }
+
+
+            });
+            console.log(dataset)
             const diceBasic = await WOD5E.api.getBasicDice({ valuePaths: paths, flatMod: 0, actor: actor })
             console.log(diceBasic)
 
             const diceAd = await WOD5E.api.getAdvancedDice({ actor: actor })
             const basicDice = Math.max(diceBasic - diceAd, 0)
-            WOD5E.api.Roll({ basicDice: basicDice, advancedDice: diceAd, actor: actor, title: `${power[0].name} Vampire Roll`, })
+            //WOD5E.api.Roll({ basicDice: basicDice, advancedDice: diceAd, actor: actor, title: `${power[0].name} Vampire Roll`, })
+            WOD5E.api.RollFromDataset({
+                dataset: dataset,
+                actor: actor
+            })
         }
 
-        async #handlePredefinedAction(actor, actionId){
+        async #handlePredefinedAction(actor, actionId) {
             console.log(actionId)
             const [label, pathConcat] = actionId.split(';')
             const paths = pathConcat.split('_')
-            const fullPaths = paths.map((path) => { return `${path}.value`})
+            const fullPaths = paths.map((path) => { return `${path}` })
             const diceBasic = await WOD5E.api.getBasicDice({ valuePaths: fullPaths, flatMod: 0, actor: actor })
             const diceAd = await WOD5E.api.getAdvancedDice({ actor: actor })
             const basicDice = Math.max(diceBasic - diceAd, 0)
-            WOD5E.api.Roll({ basicDice: basicDice, advancedDice: diceAd, actor: actor, title: `${label} Roll`, })
+            let dataset = {
+                selectDialog: true,
+                attribute: "",
+                skill: "",
+                discipline: ""
+            }
+            fullPaths.forEach(element => {
+                let [key, value] = element.split('.')
+                switch (key) {
+                    case "attributes":
+                        dataset["attribute"] = value
+                        break;
+                    case "disciplines":
+                        dataset["discipline"] = value
+                        break;
+                    case "skills":
+                        dataset["skill"] = value
+                        break;
+
+                    default:
+                        break;
+                }
+            });
+            //            WOD5E.api.Roll({ basicDice: basicDice, advancedDice: diceAd, actor: actor, title: `${label} Roll`, })
+            WOD5E.api.RollFromDataset({
+                dataset: dataset,
+                actor: actor
+            })
+        }
+
+        async toChat(item) {
+            if (!item || !(item instanceof Item)) {
+                console.error("Invalid item passed to toChat function.");
+                return;
+            }
+
+            const itemName = item.name;
+            const itemDescription = item.system.description || "No description available.";
+
+            // Construct the chat message
+            const chatData = {
+                user: game.user.id,
+                speaker: ChatMessage.getSpeaker(),
+                content: `
+                <div class="item-chat">
+                  <h2>${itemName}</h2>
+                  <div>${itemDescription}</div>
+                </div>
+              `,
+            };
+
+            // Send the chat message
+            ChatMessage.create(chatData);
         }
     }
 })

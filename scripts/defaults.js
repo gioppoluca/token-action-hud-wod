@@ -17,7 +17,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             {
                 nestId: 'inventory',
                 id: 'inventory',
-                name: coreModule.api.Utils.i18n('Template.Inventory'),
+                name: coreModule.api.Utils.i18n('tokenActionHud.wod.inventory'),
                 groups: [
                     { ...groups.weapons, nestId: 'inventory_weapons' },
                     { ...groups.armor, nestId: 'inventory_armor' },

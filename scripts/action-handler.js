@@ -106,7 +106,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
       }
     }
 
-    async #buildPredefined(){
+    async #buildPredefined() {
       const groupData = { id: 'predefined', type: 'system' }
       this.addActions(PREDEFINED_ACTIONS, groupData)
     }
