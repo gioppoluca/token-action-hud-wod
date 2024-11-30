@@ -4,13 +4,15 @@
   "description": "Token Action HUD is a repositionable HUD of actions for a selected token",
   "authors": [
     {
-      "name": "gioppoluca",
-      "url": "https://github.com/gioppoluca"
+      "name": "Luca Gioppo",
+      "url": "https://github.com/gioppoluca",
+      "discord": "gioppoluca",
+      "flags": {}
     }
   ],
-  "url": "This is auto replaced",
+  "url": "#{URL}#",
   "flags": {},
-  "version": "This is auto replaced",
+  "version": "#{VERSION}#",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331"
@@ -27,12 +29,14 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "languages/en.json"
+      "path": "languages/en.json",
+      "flags": {}
     },
     {
       "lang": "it",
       "name": "italiano",
-      "path": "languages/it.json"
+      "path": "languages/it.json",
+      "flags": {}
     }
   ],
   "packs": [],
@@ -64,9 +68,9 @@
     }
   },
   "socket": false,
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
-  "readme": "https://github.com/Larkinabout/fvtt-token-action-hud-wod#readme",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#",
+  "readme": "https://github.com/gioppoluca/fvtt-token-action-hud-wod#README",
   "protected": false,
   "coreTranslation": false,
   "library": false
