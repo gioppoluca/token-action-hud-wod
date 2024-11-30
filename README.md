@@ -8,12 +8,18 @@ Token Action HUD is a repositionable HUD of actions for a selected token.
 
 ![Token Action HUD](.github/readme/token-action-hud.gif)
 
-# Features
+# Features from the main CORE
 - Make rolls directly from the HUD instead of opening your character sheet.
 - Use items from the HUD or right-click an item to open its sheet.
 - Move the HUD and choose to expand the menus up or down.
 - Unlock the HUD to customize groups and actions.
 - Add your own macros and Journal Entry and Roll Table compendiums.
+
+## Features of this plugin
+- Roll abilities
+- Roll disciplines that have a dice pool
+- Roll skills
+- Roll predefined actions
 
 # Required Modules
 
