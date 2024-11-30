@@ -1,7 +1,7 @@
 {
   "id": "token-action-hud-wod",
   "title": "Token Action HUD WoD",
-  "description": "Token Action HUD is a repositionable HUD of actions for a selected token",
+  "description": "Token Action HUD for World of Darkness is a plugin module for the CORE Token Action HUD customized for World of Darkness",
   "authors": [
     {
       "name": "Luca Gioppo",
@@ -70,7 +70,7 @@
   "socket": false,
   "manifest": "#{MANIFEST}#",
   "download": "#{DOWNLOAD}#",
-  "readme": "https://github.com/gioppoluca/fvtt-token-action-hud-wod#README",
+  "readme": "https://github.com/gioppoluca/token-action-hud-wod#README",
   "protected": false,
   "coreTranslation": false,
   "library": false
