@@ -46,7 +46,7 @@
         "id": "vtm5e",
         "compatibility": {
           "minimum": "5.0",
-          "maximum": "5.0",
+          "maximum": "5.0.99",
           "verified": "5.0.9"
         }
       }
