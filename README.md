@@ -1,5 +1,6 @@
-- ![](https://img.shields.io/badge/Foundry-v12-informational)
-- ![Downloads](https://img.shields.io/github/downloads/gioppoluca/token-action-hud-wod/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge) 
+- ![](https://img.shields.io/badge/Foundry-v12-informational) ![](https://img.shields.io/badge/Foundry-v13-informational)
+- ![Downloads](https://img.shields.io/github/downloads/gioppoluca/token-action-hud-wod/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge)
+- ![Total Download Count](https://img.shields.io/github/downloads/gioppoluca/token-action-hud-wod/total?color=d1b124&label=Total%20Download)
 - ![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ftoken-action-hud-wod&colorB=448d34&style=for-the-badge)
 
 # Token Action HUD WoD
