@@ -108,6 +108,60 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         #handleItemAction(event, actor, actionId) {
             const item = actor.items.get(actionId)
+            console.log(item)
+            console.log(actionId)
+            if (item.type === "weapon") {
+
+                let selectedTkn = canvas.tokens.objects.children.filter((token) => token.isTargeted)
+                console.log(selectedTkn)
+                for (let i = 0; i < selectedTkn.length; i++) {
+                    const target = selectedTkn[i]
+                    console.log(target)
+                    WOD5E.api.RollFromDataset({
+                        dataset: {
+                            attribute: "dexterity",
+                            skill: "athletics",
+                            selectDialog: true,
+                            target: target.actor
+                        },
+                        actor: target.actor
+                    })
+                }
+
+                // actor weapon attack
+                const dicepool = item.system.dicepool
+                console.log(dicepool)
+                const paths = Object.values(dicepool).map((pool) => { return `${pool.path}` })
+                console.log(paths)
+                let dataset = {
+                    selectDialog: true,
+                    attribute: "",
+                    skill: "",
+                    discipline: ""
+                }
+                paths.forEach(element => {
+                    let [key, value] = element.split('.')
+                    switch (key) {
+                        case "attributes":
+                            dataset["attribute"] = value
+                            break;
+                        case "disciplines":
+                            dataset["discipline"] = value
+                            break;
+                        case "skills":
+                            dataset["skill"] = value
+                            break;
+
+                        default:
+                            break;
+                    }
+                })
+                WOD5E.api.RollFromDataset({
+                    dataset: dataset,
+                    actor: actor
+                })
+                return
+            }
             this.toChat(item)
         }
 
@@ -240,9 +294,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const [label, pathConcat] = actionId.split(';')
             const paths = pathConcat.split('_')
             const fullPaths = paths.map((path) => { return `${path}` })
-            const diceBasic = await WOD5E.api.getBasicDice({ valuePaths: fullPaths, flatMod: 0, actor: actor })
-            const diceAd = await WOD5E.api.getAdvancedDice({ actor: actor })
-            const basicDice = Math.max(diceBasic - diceAd, 0)
+        //    const diceBasic = await WOD5E.api.getBasicDice({ valuePaths: fullPaths, flatMod: 0, actor: actor })
+        //    const diceAd = await WOD5E.api.getAdvancedDice({ actor: actor })
+        //    const basicDice = Math.max(diceBasic - diceAd, 0)
             let dataset = {
                 selectDialog: true,
                 attribute: "",

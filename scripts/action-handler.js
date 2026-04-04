@@ -32,6 +32,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
       if (this.actorType === 'vampire') {
         this.#buildCharacterActions()
+      } else if (this.actorType === 'mortal') {
+        this.#buildMortalActions()
       } else if (!this.actor) {
         this.#buildMultipleTokenActions()
       }
@@ -48,6 +50,16 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
       this.#buildSkills()
       this.#buildPredefined()
     }
+
+    /**
+     * Build multiple token actions
+     * @private
+     * @returns {object}
+     */
+    #buildMortalActions() {
+      this.#buildInventory()
+    }
+
 
     /**
      * Build multiple token actions
@@ -80,7 +92,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
       for (const [type, typeMap] of inventoryMap) {
         const groupId = ITEM_TYPE[type]?.groupId
-
+console.log(type)
+console.log(typeMap)
         if (!groupId) continue
 
         const groupData = { id: groupId, type: 'system' }
@@ -100,6 +113,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             encodedValue
           }
         })
+
+        console.log(actions)
 
         // TAH Core method to add actions to the action list
         this.addActions(actions, groupData)
