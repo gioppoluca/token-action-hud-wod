@@ -167,11 +167,11 @@ jobs:
         uses: indiesdev/curl@v1.1
         id: foundry-api
         with:
-          url: https://api.foundryvtt.com/_api/packages/release_version/
+          url: https://foundryvtt.com/_api/packages/release_version/
           method: "POST"
           headers: '{ "Content-Type": "application/json", "Authorization": "${{ secrets.FOUNDRY_API_TOKEN }}" }'
           accept: 200
-          body: '{"id": "token-action-hud-wod", "dry-run": false, "release": { "version": "${{ github.event.release.tag_name }}", "manifest": "https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.tag_name }}/module.json", "notes": "https://github.com/gioppoluca/token-action-hud-wod/blob/master/CHANGELOG.md", "compatibility": { "minimum": "12", "verified": "12", "maximum": "" } } }'
+          body: '{"id": "token-action-hud-wod", "dry-run": false, "release": { "version": "${{ github.event.release.tag_name }}", "manifest": "https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.tag_name }}/module.json", "notes": "https://github.com/gioppoluca/token-action-hud-wod/blob/master/CHANGELOG.md", "compatibility": { "minimum": "12", "verified": "14", "maximum": "14" } } }'
           log-response: true
           timeout: 10000
       - name: "Use response"
