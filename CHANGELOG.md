@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2025-12-12
+### :bug: Bug Fixes
+- [`0408482`](https://github.com/gioppoluca/token-action-hud-wod/commit/04084827affce23222453fef69f98d104f2ab816) - change to make it compatible with the changes system ID, but also with the old one *(commit by [@gioppoluca](https://github.com/gioppoluca))*
+
+
 ## [0.2.4] - 2025-09-15
 ### :sparkles: New Features
 - [`e0268a1`](https://github.com/gioppoluca/token-action-hud-wod/commit/e0268a1b8745314225e817bc9622230d7e5a07e8) - compatible with both v1 and v2 of hud *(commit by [@gioppoluca](https://github.com/gioppoluca))*
@@ -24,3 +29,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.2.2]: https://github.com/gioppoluca/token-action-hud-wod/compare/0.2.1...0.2.2
 [0.2.3]: https://github.com/gioppoluca/token-action-hud-wod/compare/0.2.2...0.2.3
 [0.2.4]: https://github.com/gioppoluca/token-action-hud-wod/compare/0.2.3...0.2.4
+[0.3.0]: https://github.com/gioppoluca/token-action-hud-wod/compare/0.2.4...0.3.0
