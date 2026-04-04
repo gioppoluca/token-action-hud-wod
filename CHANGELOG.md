@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.14.0] - 2026-04-04
+### :sparkles: New Features
+- [`bfae045`](https://github.com/gioppoluca/token-action-hud-wod/commit/bfae0451fa205af5c5b76c5a7b13d5b5000cc616) - added actions and capability ot having actions also for humans *(commit by [@gioppoluca](https://github.com/gioppoluca))*
+- [`4ae5131`](https://github.com/gioppoluca/token-action-hud-wod/commit/4ae513168536105d0cf3143ac2a45fb57cbbc764) - V14 *(commit by [@gioppoluca](https://github.com/gioppoluca))*
+
+
 ## [0.3.0] - 2025-12-12
 ### :bug: Bug Fixes
 - [`0408482`](https://github.com/gioppoluca/token-action-hud-wod/commit/04084827affce23222453fef69f98d104f2ab816) - change to make it compatible with the changes system ID, but also with the old one *(commit by [@gioppoluca](https://github.com/gioppoluca))*
@@ -30,3 +36,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.2.3]: https://github.com/gioppoluca/token-action-hud-wod/compare/0.2.2...0.2.3
 [0.2.4]: https://github.com/gioppoluca/token-action-hud-wod/compare/0.2.3...0.2.4
 [0.3.0]: https://github.com/gioppoluca/token-action-hud-wod/compare/0.2.4...0.3.0
+[0.14.0]: https://github.com/gioppoluca/token-action-hud-wod/compare/0.3.0...0.14.0
